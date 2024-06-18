@@ -4,7 +4,6 @@ Video:
 
 Code:
 ``` c++
-
 #include <SPI.h>
 #include <MFRC522.h>
 
@@ -94,8 +93,8 @@ void loop()
   }
   lastButtonState = buttonState; // Button-Zustand speichern
 
-  // RFID-Scanner nach 10 Sekunden Inaktivität deaktivieren
-  if (rfidEnabled && millis() - lastActivityTime > 10000) 
+  // RFID-Scanner nach 20 Sekunden Inaktivität deaktivieren
+  if (rfidEnabled && millis() - lastActivityTime > 20000) 
   {
     rfidEnabled = false;
     Serial.println("RFID Leser deaktiviert aufgrund von Inaktivität");
